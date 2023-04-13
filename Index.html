@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria Acapulco</title>
+   
+    <!---------- CSS --------->
+    <link rel="stylesheet" href="CSS/styles.css">
+
+    
+    <!----------- Fuentes ----------->
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <!----- Righteous -----> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!----- Font Awesome ----->
+    <script src="https://kit.fontawesome.com/e88c7d8df1.js" crossorigin="anonymous"></script>
+    <!-- ------------------------------------------------------------------------->
+    
+    <!---- Precarga de imagenes ---->
+    <link rel="preload" as="image" href="/media/bg-img1.jpg">
+    <link rel="preload" as="image" href="/media/bg-img2.jpg">
+    <link rel="preload" as="image" href="/media/bg-img3.jpg">
+    <link rel="preload" as="image" href="/media/G01.jpg">
+    <link rel="preload" as="image" href="/media/G02.jpg">
+    <link rel="preload" as="image" href="/media/G03.jpg">
+    <link rel="preload" as="image" href="/media/G04.jpg">
+    <link rel="preload" as="image" href="/media/G05.jpg">
+    <!--------------------------------------------------------->
+    
+    <!-- AOS animation library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--------------------------------------------------------->
+    
+    <!------ JS (hay más al final del html) ------>
+    <script src="JS/pestanasOfertas.js"></script>
+    <script src="JS/modalBienvenida-Form.js"></script>
+    <script src="JS/menu.js"></script>
+    <script src="JS/lightboxGaleria.js"></script>
+    <script src="JS/carrousel.js"></script>
+    <script src="JS/Actividad-Complementaria/parallax.js"></script>
+
+</head>
+
+
+<body onload= "mostrarPestana('pestanaTrajes', 'tabTrajes')">
+
+    <!------ modal bienvenida ------>
+    <div id="modalBienvenida">
+        <div id="contenedorModal">
+            <h2 id="tituloModal">Bienvenido a la Feria de Acapulco</h2>
+            <p id="textoModal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button id="btnModal" onclick="cerrarModalBienvenida()">Empezar!</button>
+        </div>
+    </div>
+    <!--------------------------------------------------------->
+
+
+    <!------ Encabezado ------>
+    <header id="encabezado">
+
+        <!------ Fondo slide hero ------>
+        <div class="fondosHero" id="fondoHero1"></div>
+        <div class="fondosHero" id="fondoHero2"></div>
+        <div class="fondosHero" id="fondoHero3"></div>
+        <!---------- Fin slide hero ---------->
+
+        <!------ Barra de navegación ------>
+        <div id="navbar">
+
+            <!---- Logo ---->
+            <div id="logo" class="tooltip" data-tooltip="Enlace al final de la página">
+                <a href="#footer"><img src="media/logoipsum-235.svg" alt="Logo"></a>
+            </div>
+            <!----- Fin Logo ----->
+
+            <!---- Menú navegación ---->
+            <nav>
+                    <ul>
+                        <li class="elementoMenu tooltip" data-tooltip="boton"><a href="#header">Inicio</a></li>
+                        <li class="elementoMenu"><a href="#filosofia">Filosofía</a></li>
+                        <li class="elementoMenu"><a href="#galeria">Galería</a></li>
+                        <li class="elementoMenu"><a href="#ofertas">Ofertas</a>
+
+                            <!----- Submenú Ofertas ----->
+                            <ul id="submenu">
+                                <li class="elemSubmenu"><a href="#ofertas" onclick="mostrarPestana('pestanaTrajes', 'tabTrajes')">Trajes</a></li>
+                                <li class="elemSubmenu"><a href="#ofertas" onclick="mostrarPestana('pestanaHoteles', 'tabHoteles')">Hoteles</a></li>
+                                <li class="elemSubmenu"><a href="#ofertas" onclick="mostrarPestana('pestanaTrabajos', 'tabTrabajos')">Trabajos</a></li>
+                            </ul>
+                            <!-------- Fin Submenú Ofertas -------->
+
+                        </li>
+                        <li class="elementoMenu"><a href="#contacto">Contacto</a></li>
+                    </ul>
+            </nav>
+        </div>
+        <!--------- Fin Menú Navegación ------------->
+
+        <!----- Hero título + subtítulo ----->
+        <div id="contenidoHero">
+            <h1 id="tituloEncabezado" data-aos="fade-up">Feria Acapulco</h1>
+            <p id="subtituloEncabezado" data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut aliquam massa.</p>
+        </div>
+        <!-------- Fin Hero título + subtítulo -------->
+
+    </header>
+    <!--------- Fin Encabezado ------------>
+
+
+
+    <!---------- Sección filosofía ---------->
+    <section id="filosofia">
+
+        <!----- Título sección ----->
+        <h2 class="tituloSeccion" data-aos="fade-up">Filosofía</h2>
+
+        <!-------- Contenedor Filosofía ---------->
+        <div id="contenedorFilo" data-aos="fade-up">
+
+            <!-- Clase col50 divide al padre en 2 y ubicar al hermano al lado-->
+            <div class="col50" >
+
+                <!---- Video Filosofía autoplay muted ---->
+                <video src="media/videoFeria.mp4" id="videoFilo" controls muted autoplay class="tooltip" data-tooltip="Vídeo de la feria"></video>
+    
+            </div>
+            <!-- Fin col50 Vídeo -->
+
+            <!---- El otro col50 ---->
+            <div class="col50" >
+
+                <!---- Descripción Filosofía ---->
+                <p class="textoDescripcion tooltip" data-tooltip="Descripción de nuestra filosofía">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec nec dictum magna. Proin sed metus sollicitudin, 
+                    cursus tellus vitae, rutrum augue. Pellentesque habitant 
+                    morbi tristique senectus et netus et malesuada fames ac 
+                    turpis egestas. Vivamus lacinia eros ac leo molestie, eu 
+                    volutpat dolor cursus. Morbi gravida, tellus ac dignissim 
+                    iaculis, dolor lacus commodo urna, quis mollis lacus lorem sit 
+                    amet nulla. Quisque tempor consequat turpis quis maximus.</p>
+            </div>
+            <!---- Fin col50 Descripción ---->
+
+        </div>
+        <!-------- Fin Contenedor Filosofía -------->
+
+    </section>
+    <!--------- Fin Sección Filosofía --------->
+
+
+
+    <!---------- ### Actividad Complementaria 1/4 ### ---------->
+
+    <!---------- Sección Parallax ---------->
+    <section id="parallax-section">
+
+        <!----- Div para BackGround Parallax ----->
+        <div id="parallaxBG" class="tooltip" data-tooltip="Parallax"></div>
+    </section>
+    <!--------- Fin Sección Parallax --------->
+
+    <!---------- Fin Actividad Complementaria 1/4 ---------->
+
+
+
+    <!-------- Sección galería -------->
+    <section id="galeria">
+
+        <!----- Título sección ----->
+        <h2 class="tituloSeccion" data-aos="fade-up">Galería</h2>
+
+        <!----- Contenedor Galería ----->
+        <div class="contenedorGaleria" data-aos="fade-up">
+            <img src="media/G01.jpg" alt="" class="imgGal" >
+            <img src="media/G02.jpg" alt="" class="imgGal" >
+            <img src="media/G03.jpg" alt="" class="imgGal" >
+            <img src="media/G05.jpg" alt="" class="imgGal" >
+            <img src="media/G04.jpg" alt="" class="imgGal" >
+        </div>
+        <!-------- Fin Contenedor Galería -------->
+
+        <!------ lightboxGaleria ------>
+        <div id="modalLightBoxG">
+
+            <!------ Contenedor imágen LightBox ------>
+            <div id="imageToShow">
+            </div>
+
+            <!------ Botones LightBox ------>
+            <button class="lbButtons lbbRight"><i class="fa-solid fa-angle-right " onclick="nextImgGal()"></i></button>
+            <button class="lbButtons lbbLeft" onclick="prevImgGal()"><i class="fa-solid fa-angle-left"></i></button>
+            <!------ Fin Botones LightBox ------>
+
+        </div>
+        <!------ Fin lightboxGaleria ------>
+
+    </section>
+    <!--------- Fin Sección Galería --------->
+
+
+
+    <!-------- Sección ofertas -------->
+    <section id="ofertas">
+
+        <!----- Título sección ----->
+        <h2 class="tituloSeccion" data-aos="fade-up">Ofertas</h2>
+
+        <!----- Contenedor Ofertas ----->
+        <div id="contenedorOfertas" data-aos="fade-up">
+
+            <!------ Menú selección Ofertas ------>
+            <div id="colSeleccionOfertas" >
+                <button id="tabTrajes" class="botonPestana pestanaActiva tooltip" data-tooltip="Boton para ver las ofertas de trajes" onclick="mostrarPestana('pestanaTrajes', 'tabTrajes')">Trajes</button>
+                <button id="tabHoteles" class="botonPestana tooltip" data-tooltip="Boton para ver las ofertas de hoteles." onclick= "mostrarPestana('pestanaHoteles', 'tabHoteles')">Hoteles</button>
+                <button id="tabTrabajos" class="botonPestana tooltip" data-tooltip="Boton para ver las ofertas de trabajos." onclick= "mostrarPestana('pestanaTrabajos', 'tabTrabajos')">Trabajos</button>
+            </div>
+            <!------ Fin Menú selección Ofertas ------>
+
+            <!------ div con pestaña oferta trajes ((img + nombreOferta + precioOferta) * 6) ------>
+            <div class="contenedorPestana" id="pestanaTrajes" >
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/traje1.jpg" alt="traje1"/>
+                        <p class="nombreOferta">Traje 1</p>
+                        <p class="precioOferta">100€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/traje2.jpg" alt="traje2"/>
+                        <p class="nombreOferta">Traje 2</p>
+                        <p class="precioOferta">200€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/traje3.jpg" alt="traje1"/>
+                        <p class="nombreOferta">Traje 3</p>
+                        <p class="precioOferta">300€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/traje4.jpg" alt="traje4"/>
+                        <p class="nombreOferta">Traje 4</p>
+                        <p class="precioOferta">400€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/traje5.jpg" alt="traje5"/>
+                        <p class="nombreOferta">Traje 5</p>
+                        <p class="precioOferta">500€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/traje6.jpg" alt="traje6"/>
+                        <p class="nombreOferta">Traje 6</p>
+                        <p class="precioOferta">600€</p>
+                    </a>
+                </div>
+            </div>
+            <!------ Fin div con pestaña oferta trajes ------>
+
+            <!------  div con pestaña oferta hoteles ((img + nombreOferta + precioOferta) * 6) ------>
+            <div class="contenedorPestana" id="pestanaHoteles" >
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/hotel1.jpg" alt="hotel1"/>
+                        <p class="nombreOferta">Hotel 1</p>
+                        <p class="precioOferta">100€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/hotel2.jpg" alt="hotel2"/>
+                        <p class="nombreOferta">Hotel 2</p>
+                        <p class="precioOferta">200€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/hotel3.jpg" alt="hotel1"/>
+                        <p class="nombreOferta">Hotel 3</p>
+                        <p class="precioOferta">300€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/hotel4.jpg" alt="hotel4"/>
+                        <p class="nombreOferta">Hotel 4</p>
+                        <p class="precioOferta">400€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/hotel5.jpg" alt="hotel5"/>
+                        <p class="nombreOferta">Hotel 5</p>
+                        <p class="precioOferta">500€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/hotel6.jpg" alt="hotel6"/>
+                        <p class="nombreOferta">Hotel 6</p>
+                        <p class="precioOferta">600€</p>
+                    </a>
+                </div>
+
+            </div>
+            <!------ Fin div con pestaña oferta hoteles ------>
+
+            <!------  div con pestaña oferta trabajos ((img + nombreOferta + precioOferta) * 6) ------>
+            <div class="contenedorPestana" id="pestanaTrabajos" >
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/trabajo1.jpg" alt="trabajo1"/>
+                        <p class="nombreOferta">Trabajo 1</p>
+                        <p class="precioOferta">100€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/trabajo2.jpg" alt="trabajo2"/>
+                        <p class="nombreOferta">Trabajo 2</p>
+                        <p class="precioOferta">200€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/trabajo3.jpg" alt="trabajo1"/>
+                        <p class="nombreOferta">Trabajo 3</p>
+                        <p class="precioOferta">300€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/trabajo4.jpg" alt="trabajo4"/>
+                        <p class="nombreOferta">Trabajo 4</p>
+                        <p class="precioOferta">400€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/trabajo5.jpg" alt="trabajo5"/>
+                        <p class="nombreOferta">Trabajo 5</p>
+                        <p class="precioOferta">500€</p>
+                    </a>
+                </div>
+
+                <div class="oferta">
+                    <a href="#">
+                        <img class="imagenOferta" src="media/ofertas/trabajo6.jpg" alt="trabajo6"/>
+                        <p class="nombreOferta">Trabajo 6</p>
+                        <p class="precioOferta">600€</p>
+                    </a>
+                </div>
+
+            </div>
+            <!------ Fin div con pestaña oferta trabajos ------>
+
+        </div>
+        <!------ Fin Contenedor Ofertas ------>
+
+    </section>
+    <!------ Fin Sección Ofertas ------>
+
+
+
+    <!------ Sección contacto ------>
+    <section id="contacto">
+
+        <!------ Título Sección ------>
+        <h2 class="tituloSeccion" data-aos="fade-up">Contacto</h2>
+
+        <!------ Contenedor Contacto ------>
+        <div id="contenedorContacto" data-aos="fade-up">
+
+
+            <!------ ### Actividad Complementaria 2/4 ###------>
+
+            <!------ Descripción de uso de contacto Acordeón------>
+            <div class="colDescripcion">
+
+                <!------ Contenedor Acordeón con ItemAcordeon * 3 ------>
+                <div class="acordeon">
+
+                    <!------ Item1 Acordeón ------>
+                    <div class="acordeon-item">
+
+                        <!------ Header Acordeon ------>
+                        <div class="acordeon-header tooltip" data-tooltip="Click para ver consejos para comunicarse con nosotros!" >Consejo Mensaje Trajes</div>
+
+                        <!------ Contenido Acordeón ------>
+                        <div class="acordeon-content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cumque incidunt voluptatem doloribus nemo vitae! Facere natus possimus aperiam voluptates vero eum quos maxime quo ratione, excepturi culpa neque dolor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum error sed, inventore blanditiis debitis ea hic voluptatum commodi perferendis tempore doloremque est, quos ipsam cumque numquam corporis quo temporibus officiis.</p>
+                        </div>
+
+                    </div>
+                    <!------ Fin Item1 Acordeón ------>
+
+                    <!------ Item2 Acordeón ------>
+                    <div class="acordeon-item">
+
+                        <!------ Header Acordeon ------>
+                        <div class="acordeon-header tooltip" data-tooltip="Click para ver consejos para comunicarse con nosotros!" >Consejo Mensaje Hoteles</div>
+
+                        <!------ Contenido Acordeón ------>
+                        <div class="acordeon-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, in quod exercitationem optio rem nam doloribus facere saepe dolores nesciunt consectetur, ad eligendi, eveniet perspiciatis! Soluta quos adipisci blanditiis odio?Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus neque quis sed obcaecati nostrum, itaque saepe corporis molestias ipsum exercitationem praesentium, voluptates officiis numquam soluta dolorum cumque id excepturi mollitia.</p>
+                        </div>
+
+                    </div>
+                    <!------ Fin Item2 Acordeón ------>
+
+                    <!------ Item3 Acordeón ------>
+                    <div class="acordeon-item">
+
+                        <!------ Header Acordeon ------>
+                        <div class="acordeon-header tooltip" data-tooltip="Click para ver consejos para comunicarse con nosotros!" >Consejo Mensaje Trabajo</div>
+
+                        <!------ Contenido Acordeón ------>
+                        <div class="acordeon-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla hic tenetur odio. Minima veniam in optio autem laudantium accusamus est voluptates alias, similique eligendi laboriosam quo numquam eaque ipsam inventore.Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus neque quis sed obcaecati nostrum, itaque saepe corporis molestias ipsum exercitationem praesentium, voluptates officiis numquam soluta dolorum cumque id excepturi mollitia.</p>
+                        </div>
+
+                    </div>
+                    <!------ Fin Item3 Acordeón ------>
+
+                </div>
+                <!------ Fin Contenedor Acordeón ------>
+
+            </div>
+            <!------ Fin Descripción de uso de Contacto ------>
+
+
+            <!------ ### Fin Actividad Complementaria 2/4 ### ------>
+
+        
+            <!------ Contenedor Formulario contacto ------>
+            <div class="col50">
+
+                <!------ Formulario contacto ------>
+                <form class="formContacto">
+
+                    <!------ Asunto ------>
+                    <select name="asunto" id="asunto" required>
+                        <option value="">Asunto</option>
+                        <option value="Trajes">Trajes</option>
+                        <option value="Hoteles">Hoteles</option>
+                        <option value="Trabajo">Trabajo</option>
+                    </select>
+
+                    <!------ Nombre ------>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+
+                    <!------ Correo ------>
+                    <input type="email" name="correo" id="correo" placeholder="Correo" required>
+
+                    <!------ Teléfono ------>
+                    <input type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+
+                    <!------ Mensaje ------>
+                    <textarea name="mensaje" id="mensaje"  placeholder="Mensaje" required></textarea>
+
+                    <!------ Botón enviar ------>
+                    <button type="button" class="enviarForm tooltip" data-tooltip="Click para enviar Formulario!" value="Enviar" onclick="modalContacto()">Enviar</button>
+
+                </form>
+                <!------ Fin Formulario contacto ------>
+
+            </div>
+            <!------ Fin Contenedor Formulario contacto ------>
+
+        </div>
+        <!------ Fin Contenedor Contacto ------>
+
+
+        <!------ Modal contacto ------>
+        <div id="modalContacto">
+
+            <!------ Contenedor Modal contacto ------>
+            <div id="contenedorModalContacto">
+
+                <!------ Título Modal contacto ------>
+                <h2 id="tituloModalContacto">Mensaje enviado correctamente!</h2>
+
+                <!------ Texto Modal contacto ------>
+                <p id="textoModalContacto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <!------ Botón cerrar Modal contacto ------>
+                <button id="btnModalContacto" class="tooltip" data-tooltip="Click para volver atrás." onclick="cerrarModalContacto()">Enviar</button>
+
+            </div>
+            <!------ Fin Contenedor Modal contacto ------>
+
+        </div>
+        <!------ Fin Modal contacto ------>
+        
+    </section>
+    <!------ Fin Sección Contacto ------>
+
+
+
+    <!---------- ### Actividad Complementaria 3/4 ### ---------->
+
+
+    <!------ Seccion Pestañas con Filtro  ------>
+    <section id="SectionTab">
+
+        <!------ Título Pestañas con Filtro  ------>
+        <h2 class="tituloSeccion">Otros Contactos</h2>
+
+        <!------ Contenedor Pestañas con Filtro  ------>
+        <div class="tab-section">
+
+            <!------ Contenedor Menú Selección Pestañas con Filtro  ------>
+            <div class="tabs" data-aos="fade-up">
+
+                <!------ Selección Pestaña Todos ------>
+                <div class="tabLink active tooltip" data-tooltip="Click para ver todos." data-cont="contAll">Todos</div>
+
+                <!------ Selección Pestaña Servicios ------>
+                <div class="tabLink tooltip" data-tooltip="Click para ver los servicios" data-cont="contServicios">Servicios</div>
+
+                <!------ Selección Pestaña Redes Sociales ------>
+                <div class="tabLink tooltip" data-tooltip="Click para ver las Redes Sociales" data-cont="contRedes">Redes</div>
+            </div>
+            <!------ Fin Contenedor Menú Selección Pestañas con Filtro  ------>
+
+            <!------ Contenedor Contenido de Pestañas con Filtro  ------>
+            <div class="tab-content" data-aos="fade-up">
+
+                <!------ Contenido Pestaña Todos ------>
+                <div class="tab-container active" id="contAll">
+                    <div class="image-grid" data-aos="fade-up">
+                        <img src="media/rrss1.png">
+                        <img src="media/rrss2.png">
+                        <img src="media/rrss3.png">
+                        <img src="media/servicio1.png">
+                        <img src="media/servicio2.png">
+                        <img src="media/servicio3.png">
+                    </div>
+                </div>
+                <!------ Fin Contenido Pestaña Todos ------>
+
+                <!------ Contenido Pestaña Servicios ------>
+                <div class="tab-container" id="contServicios" data-aos="fade-up">
+                    <div class="image-grid">
+                        <img src="media/servicio1.png">
+                        <img src="media/servicio2.png">
+                        <img src="media/servicio3.png">
+                    </div>
+                </div>
+                <!------ Fin Contenido Pestaña Servicios ------>
+
+                <!------ Contenido Pestaña Redes Sociales ------>
+                <div class="tab-container" id="contRedes" data-aos="fade-up">
+                    <div class="image-grid">
+                        <img src="media/rrss1.png">
+                        <img src="media/rrss2.png">
+                        <img src="media/rrss3.png">
+                    </div>
+                </div>
+                <!------ Fin Contenido Pestaña Redes Sociales ------>
+
+            </div>
+            <!------ Fin Contenedor Contenido de Pestañas con Filtro  ------>
+
+        </div>
+        <!------ Fin Contenedor Pestañas con Filtro  ------>
+
+    </section>
+    <!------ Fin Seccion Pestañas con Filtro  ------>
+
+
+    <!---------- ### Fin Actividad Complementaria 3/4 ### ---------->
+
+
+    
+    <!-------- Sección Footer -------->
+    <footer id="footer">
+
+        <!------ Contenedor Footer ------>
+        <div class="footerContainer" data-aos="fade-up">
+
+            <!---- Logo ---->
+            <a href="#encabezado" >
+                <img src="media/logoipsum-235.svg" alt="logo" class="logoFooter">
+            </a>
+
+            <!-- Contenedor Redes sociales -->
+            <div class="footerImagenes" >
+
+                <!---- FB ---->
+                <a href="#header">
+                    <img src="media/rrss1.png" alt="facebook" class="redesFooter">
+                </a>
+
+                <!---- Instagram ---->
+                <a href="#header">
+                    <img src="media/rrss2.png" alt="instagram" class="redesFooter">
+                </a>
+
+                <!---- Twitter ---->
+                <a href="#header">
+                    <img src="media/rrss3.png" alt="twitter" class="redesFooter">
+                </a>
+
+            </div>
+            <!-- Fin Contenedor Redes sociales -->
+
+        </div>
+        <!------ Fin Contenedor Footer ------>
+
+    </footer>
+    <!-------- Fin Sección Footer -------->
+
+    <!------ Scripts ------>
+    <script src="JS/Actividad-Complementaria/acordeon.js"></script>
+    <script src="JS/Actividad-Complementaria/pestanasFiltro.js"></script>
+    <script src="JS/Actividad-Complementaria/tooltips.js"></script>
+    <script>
+
+        modalBienvenida();
+
+        readyLightBox();
+
+        AOS.init();
+
+        //setInterval(heroSlideShow, 3000);
+    </script>
+    <!------ Fin Scripts ------>
+
+</body>
+
+</html>

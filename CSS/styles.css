@@ -1,0 +1,985 @@
+/* Reset inicial */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* scrollbar de color, bonito pero me molesta que no funcione el overflo hidden
+
+::-webkit-scrollbar{
+    width: 12px;  
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(235, 234, 234);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(58, 115, 195);
+} */
+
+/* oculto el scrollbar solucion mala*/
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* modal bienvenida */
+#modalBienvenida{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    display: none;
+    z-index: 5;
+}
+
+#contenedorModal{
+    width: 800px;
+    height: 500px;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:  100px 70px;
+
+    border-radius: 33px;
+    background: #e0e0e0;
+    box-shadow: inset 35px -35px 59px #8b8b8b,
+                inset -35px 35px 59px #ffffff;
+                 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+#contenedorModal>h2{
+    font-size: 2.5rem;
+    font-family: 'Righteous', cursive;
+    color: rgb(58, 115, 195);
+}
+#contenedorModal>p{
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(58, 115, 195);
+}
+#contenedorModal>button{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(58, 115, 195);
+    color: white;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+#contenedorModal>button:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(97, 136, 191);
+    transform: scale(1.1);
+}
+#contenedorModal>button:active{
+
+    transform: scale(1);
+}
+/* Fin modal Bienvenida */
+
+
+/* encabezado */
+#encabezado {
+    width: 100%;
+    height: 790px;
+    overflow: overlay;
+}
+
+.fondosHero{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+}
+
+#fondoHero1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../media/bg-img1.jpg);
+    z-index: 3;
+}
+#fondoHero2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../media/bg-img2.jpg);
+    z-index: 2;
+}
+#fondoHero3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../media/bg-img3.jpg);
+    z-index: 3;
+}
+/* sigo con el problema del overflow :S */
+body {
+    overflow-x: hidden;
+}
+
+.mainSlide{
+    animation-name: mainSlideAnim ;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.nextSlide{
+    animation-name: nextSlideAnim ;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.hiddenSlide{
+    display: none;
+}
+
+@keyframes mainSlideAnim {
+    0%{margin-left: 0%;}
+    100%{margin-left: -100%;}
+}
+
+@keyframes nextSlideAnim {
+    0%{margin-left: 100%;}
+    100%{margin-left: 0%;}
+}
+
+/* navegación */
+#navbar{
+    height: 100px;
+    width: 100%;
+    background-color: rgba(195, 195, 195, 0.75);
+    display: flex;
+    padding: 0 40px;
+    z-index: 5;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center ;
+    transition: 1s all;
+    font-size:1.7rem;
+    line-height:100px;
+    
+}
+
+/* logo encabezado */
+#logo{
+    width: auto;
+    height: 100%;
+    transition: all 0.3s ease 0s;
+	float:left;
+    display: block;
+    padding: 15px;
+}
+
+/*animacion logo*/
+#logo img:hover{
+    transform: scale(1.1);
+}
+
+#logo img:active{
+    transform: scale(1);
+}
+
+nav li{  
+    margin-left: 20px;
+    display: inline-block;
+    transition: all 0.3s ease 0s; 
+}
+
+/*animacion nav*/
+nav li:hover {
+    transform: scale(1.1) ;
+}
+nav li:active:not(:nth-child(4)){
+    transform: scale(1);
+}
+nav li :hover{
+    color: rgb(58, 115, 195);
+}
+/* fin animacion nav */
+
+/* navegacion */
+nav a{
+    list-style: none;
+	color:rgb(97, 136, 191);
+    font-family: 'Montserrat', sans-serif;
+	font-weight:bold;
+    text-decoration: none;
+}
+
+/* submenu */
+#submenu{
+    width: auto;
+    height: 150px;
+    position: absolute;
+    background-color:  rgba(195, 195, 195, 0.9);
+    border-radius: 0 0 15px 15px;
+    display: none;
+    z-index: 3;
+    top: 95px;
+    font-size: 1.2rem;
+}
+
+.elemSubmenu{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+/* con esta regla se despliega el submenu */
+.elementoMenu:hover #submenu{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.elemSubmenu:hover{
+    transform: scale(1.1);    
+}
+
+/* fin submenu */
+
+/* fin navegacion */ 
+
+#tituloEncabezado {
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 9rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 250px;
+    z-index: 4;
+}
+
+#subtituloEncabezado {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    margin-top: 2rem;
+    top: 270px;
+    z-index: 4;
+}
+
+/* animacion hero titulo + subtitulo encabezado */
+#tituloEncabezado{
+    animation: fadein 1s ease-in-out forwards;
+}
+#subtituloEncabezado{
+    animation: fadein 3s ease-in-out forwards;
+}
+/* fin animacion titulo + subtitulo encabezado */
+
+/* fade in hero titulo */
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Fin encabezado */
+.tituloSeccion {
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 130px;
+}
+
+/* Sección Filosofía */
+#filosofia {
+    background-color: rgb(97, 136, 191);
+    width: 100%;
+    height: 890px;
+    overflow: hidden;
+}
+
+/* contenedor video + descripcion filosofia*/ 
+#contenedorFilo {
+    width: 1200px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    overflow: hidden;
+    border-radius: 33px;
+    /* background: #ffffff; */
+    /* box-shadow: inset -5px 5px 15px #5a5a5a,
+                inset 5px -5px 15px #ffffff; */
+
+}
+/*divisor div 50-50*/
+.col50 {
+    width: 50%;
+    padding-top: 15px;
+    padding-right: 30px;
+    height: 400px;
+    float: left;
+
+}
+
+#videoFilo {
+    padding-left: 50px;
+    padding-top: 40px;
+    width: calc(100% - 80px);
+    height: 290px;
+}
+/* texto descripcion filosofia */
+.textoDescripcion{
+    color: rgb(100, 71, 69);
+    font-family: 'Montserrat', sans-serif;
+    text-align: auto;
+    font-size: 1.4rem;
+    padding-left: 80px;
+}
+/* fin texto descripcion filosofia */ 
+/* Fin sección Filosofía */
+
+
+/* Actividad Complementaria 1/4 */
+/* Seccion Parallax */
+#parallax-section{
+    position: relative;
+    height: 600px;
+}
+
+#parallaxBG{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1200px;
+    background-image: url(../media/parallaxBG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+/* Fin Actividad Complementaria 1/4 */
+
+
+/* Sección Galería */
+#galeria {
+    background-color: rgb(100, 71, 69);
+    width: 100%;
+    height: 990px;
+    overflow: hidden;
+}
+#galeria .tituloSeccion{
+    padding-bottom: 50px;
+}
+.contenedorGaleria {
+    width: 1240px;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    display: flex;
+    border-radius: 20px;
+}
+/* imagenes galeria dinamica */
+.imgGal {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: all 0.5s;
+    border-radius: 20px;
+}
+.imgGal:hover {
+    cursor: pointer;
+    width: 400px;
+    opacity: 1;
+    filter: contrast(120%);
+    transform: scale(1.1);
+    z-index: 1;
+    border-radius: 10px;
+}
+/* fin imganes galeria dinamica */
+
+/* lightbox Galeria */
+#modalLightBoxG{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 4;
+}
+
+#imageToShow{
+    width: 80vw;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 50px;
+}
+
+/* he probado con height:auto pero me queda mejor asi */ 
+.imgLB{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.lbButtons{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(58, 115, 195);
+    transition: all 0.3s;
+}
+.lbButtons:hover{
+    border-color:rgb(255, 255, 255);
+    background-color: rgb(58, 115, 195);
+}
+.lbButtons:active{
+    width: 90px;
+    height: 90px;
+}
+.lbbRight{
+    right: 30px;
+}
+
+.lbbLeft{
+    left: 30px;
+}
+
+.lbButtons i{
+    font-size: 3rem;
+    color: rgb(58, 115, 195);
+    transition: all 0.3s;
+}
+.lbButtons:hover i{
+    color: rgb(255, 255, 255);
+}
+
+.lbButtons i:active{
+    font-size: 2.5rem;
+}
+/* Fin Seccion Galería */
+
+/* Sección Ofertas */
+
+#ofertas {
+    background-image: url(../media/fondo_ofertas.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 990px;
+    overflow: hidden;
+}
+/* contenedor seleccion pestañas + pestañas */
+#contenedorOfertas {
+    width: 1200px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    overflow: hidden;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* contenedor seleccion ofertas */
+#colSeleccionOfertas {
+    background-color: rgb(251, 254, 17);
+    opacity: 0.9;
+    width: 25%;
+    height: 100%;
+    float: left;
+    padding-left: 7.5%;
+    margin: auto;
+    border-radius: 20px;
+    color:rgb(100, 71, 69);
+    font-weight: bold;
+}
+#colSeleccionOfertas button:hover {
+    cursor: pointer;
+    color: rgb(97, 136, 191);
+    
+}
+
+/*contenedor tarjetas oferta*/
+.contenedorPestana {
+    width: 75%;
+    height: 100%;
+    border-radius: 20px;
+    border-color: rgba(251, 254, 17);
+    border-style: solid;
+    float: left;
+}
+/* botones seleccion pestaña*/
+
+.botonPestana {
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    font-size: 1.9rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 40%;
+    color: rgb(100, 71, 69);
+    transition-property: color;
+    transition-duration: 0.5s;
+    margin-right: 40px;
+}
+
+.pestanaActiva{
+    color: rgb(58, 115, 195);
+    /* text-decoration: underline; */
+    border-bottom: solid;
+}
+/* oferta */
+.oferta {
+    background-color: rgba(250, 254, 17, 0.8);
+    width: calc(33.33% - 50px);
+    height: calc(50% - 50px);
+    border-radius: 5px;
+    border: 1px solid rgb(251, 254, 17);
+    float: left;
+    margin: 25px;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+.oferta:hover {
+    background-color:rgb(251, 254, 17, 0.9);
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    filter: contrast(120%);
+    transform: scale(1.1);
+}
+
+.oferta:hover .nombreOferta {
+    color: rgb(100, 71, 69, 0.9);
+}
+
+.oferta:hover .precioOferta {
+    color: rgb(255, 255, 255, 0.9);
+}
+
+.oferta a{
+    text-decoration: none;
+}
+
+/* contenedor imagen oferta (he intentado a hacer el contenedor que usted nos enseñó y no he encontrado forma de que me queden bien las imagenes, supongo que es por las dimensiones de los jpg que tengo, con este apaño han quedado 'decentes')*/
+.imagenOferta {
+    width: 100%;
+    height: 140px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.oferta p{
+    transition: all 0.5s;
+}
+.nombreOferta {
+    text-align: center;
+    color: white;
+    margin-top: 5px;
+}
+
+.precioOferta {
+    text-align: center;
+    color: rgb(100, 71, 69);
+    margin-top: 5px;
+}
+
+.ofertaAnimada{
+    animation-name: animOferta;
+    animation-duration: 1s;
+}
+@keyframes animOferta {
+    from {transform: scale(0.25,0.25);
+    }
+    to {transform: scale(1,1);
+    }
+}
+/* fin oferta */ 
+/* Fin seccion Ofertas */
+
+
+/* Actividad Complementaria 2/4 */
+
+/* Seccion Pestañas con Filtro */
+#SectionTab {
+    width: 100%;
+    height: 900px;
+    background: linear-gradient(white, rgb(58, 115, 195) 60%);
+}
+
+.tab-section {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
+}
+
+.tabLink {
+    padding-bottom: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.tabLink.active {
+    border-bottom: 2px solid #DC9C76;
+    font-weight: bold;
+}
+
+.tab-content {
+    flex-grow: 1;
+}
+
+.tab-container {
+    display: none;
+}
+
+.tab-container.active {
+    display: block;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px 180px;
+    margin-left: 120px;
+}
+
+.image-grid img {
+    max-width: 100px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+/* Fin Actividad Complementaria 2/4 */
+
+
+/* Sección Contacto */
+
+#contacto {
+    background-image: url(../media/fondo-contacto.jpg);
+    background-position:  center;
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+}
+
+#contenedorContacto{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/*contenedor form*/
+#contenedorContacto .col50{
+    background-color: rgb(100, 71, 69, 0.7);
+    height: 450px;
+    border-radius: 20px;
+}
+/*contenedor descripcion contacto*/
+.colDescripcion{
+    width: 50%;
+    padding-top: 40px;
+    padding-right: 30px;
+    height: 450px;
+    float: left;
+}
+
+/* Actividad Complementaria 3/4 */
+/* Acordeón */
+.acordeon-item {
+    margin-bottom: 10px;
+}
+
+.acordeon-header {
+    width: 500px;
+    cursor: pointer;
+    background-color: rgba(58, 115, 195, 0.75);
+    padding: 10px;
+    font-family: 'Righteous', cursive;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgba(100, 71, 69, 0.75);
+}
+
+.acordeon-header:hover {
+    background-color: rgba(100, 71, 69, 0.75);
+    border: 1px solid rgba(58, 115, 195, 0.75);
+}
+
+.acordeon-content {
+    display: none;
+    padding: 10px;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    color: white;
+}
+/* Fin Acordeón */
+
+/* Fin Actividad Complementaria 3/4 */
+
+.formContacto {
+    width: 75%;
+    height: 75%;
+    float: left;
+    padding-left: 60px;
+}
+/*form items*/
+input,
+select,
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    height: 40px;
+    margin-top: 25px;
+    width: 110%;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-top: 3px;
+    border: none;
+    resize: none;
+}
+
+textarea {
+    height: 60px;
+    padding-top: 8px;
+}
+
+select {
+    margin-top: 0;
+    width: 25%;
+    text-align: center;
+    padding: 0;
+}
+select:hover{
+    cursor: pointer;
+}
+/* fin form items */
+/* boton efecto click */
+form button {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    color: rgb(97, 136, 191);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 5px;
+    transition: 0.2s all;
+}
+
+form button:hover {
+    background-color: rgb(97, 136, 191);
+    color: rgb(255, 255, 255);
+}
+form button:active{
+    transform: scale(0.95);
+}
+/* fin boton */
+
+/* modal Contacto */
+#modalContacto{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0px;
+    display: none;
+    z-index: 5;
+}
+
+#contenedorModalContacto{
+    width: 800px;
+    height: 400px;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:  100px 70px;
+
+    border-radius: 33px;
+    background: #e0e0e0;
+    box-shadow: inset 35px -35px 59px #8b8b8b,
+                inset -35px 35px 59px #ffffff;
+                 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+#contenedorModalContacto>h2{
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+    font-family: 'Righteous', cursive;
+    color: rgb(58, 115, 195);
+}
+#contenedorModalContacto>p{
+    font-size: 1.2rem;
+    padding: 20px 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(58, 115, 195);
+    margin-bottom: 20px;
+}
+#contenedorModalContacto button{
+
+    width: 100px;
+    height: 50px;
+    background-color: rgb(58, 115, 195);
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+#contenedorModalContacto button:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(97, 136, 191);
+}
+#contenedorModalContacto button:active{
+
+    transform: scale(0.95);
+}
+/* Fin modal Bienvenida */
+
+/* Fin sección Contacto */
+
+/* Sección Footer */
+footer {
+    width: 100%;
+    height: 250px;
+    background-image: url(../media/Footer.jpg);
+    background-position: 100% 950px;
+}
+
+.footerContainer {
+    padding-left: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footerImagenes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 200px;
+    padding-right: 370px;
+    align-items: center;
+}
+
+.redesFooter {
+    width: 50px;
+    height: 50px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+}
+
+.redesFooter:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.redesFooter:active, .logoFooter:active{
+    transform: scale(1);
+}
+
+.logoFooter{
+    transition: all 0.3s ease 0s;
+}
+.logoFooter:hover{
+    transform: scale(1.1);
+}
+
+/* Fin sección Footer */
+
+
+/* Actividad Complementaria 4/4 */
+/* tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+
+    font-family: 'Montserrat', sans-serif;
+    text-transform: none;
+    text-align: center;
+    font-size: small;
+    font-weight: lighter;
+    color: #fff;
+
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    padding: 5px 0;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 7;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* Fin Actividad Complementaria 4/4 */
