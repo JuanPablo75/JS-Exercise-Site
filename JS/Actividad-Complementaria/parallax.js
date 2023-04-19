@@ -3,7 +3,7 @@
 function Parallax() {
 
     // Obtenemos el valor del scroll en pixeles a partir de los 900px que es donde quiero que empiece el efecto
-    let scrollTop = document.documentElement.scrollTop - 860;
+    let scrollTop = document.documentElement.scrollTop - 800;
     
     // Muevo en el eje Y el parallaxBG cuando esté encima de la seccion parallax
     document.getElementById('parallaxBG').style.transform = 'translateY(' + scrollTop * -0.4 + 'px)';
