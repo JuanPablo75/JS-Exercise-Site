@@ -58,7 +58,7 @@ function readyLightBox(){
         //para que se cierre al pulsar fuera de la imagen, fuera de los botones y fuera de los iconos
         window.addEventListener("click", function(event){
 
-            if (!event.target.matches(".imgLB") && !event.target.matches(".imgGal") && !event.target.matches(".lbButtons")&& !event.target.matches(".fa-solid")){
+            if (!event.target.matches(".imgLB") && !event.target.matches(".imgGal") && !event.target.matches(".lbButtons") && !event.target.matches(".fa-solid")){
                 document.getElementById("modalLightBoxG").style.display = "none";
                 document.getElementById("modalLightBoxG").style.overflow = "auto";
             }
@@ -72,6 +72,22 @@ function readyLightBox(){
                 document.getElementById("modalLightBoxG").style.overflow = "auto";
             }
         })
+
+        //para que las imagenes cambien usando las flechas
+        window.addEventListener("keydown", function(event){
+                
+                if (event.key =="ArrowRight"){
+                    nextImgGal();
+                }
+            }
+        )
+        window.addEventListener("keydown", function(event){
+                    
+                    if (event.key =="ArrowLeft"){
+                        prevImgGal();
+                    }
+                }
+            )
     
     }
 }

@@ -27,14 +27,14 @@
     <!-- ------------------------------------------------------------------------->
     
     <!---- Precarga de imagenes ---->
-    <link rel="preload" as="image" href="/media/bg-img1.jpg">
-    <link rel="preload" as="image" href="/media/bg-img2.jpg">
-    <link rel="preload" as="image" href="/media/bg-img3.jpg">
-    <link rel="preload" as="image" href="/media/G01.jpg">
-    <link rel="preload" as="image" href="/media/G02.jpg">
-    <link rel="preload" as="image" href="/media/G03.jpg">
-    <link rel="preload" as="image" href="/media/G04.jpg">
-    <link rel="preload" as="image" href="/media/G05.jpg">
+    <link rel="preload" as="image" alt="Imagen de fondo. Fachada de edificio con banderillas" href="/media/bg-img1.jpg">
+    <link rel="preload" as="image" alt="Imagen de fondo. Gente paseando por la feria y gente en carros con caballos." href="/media/bg-img2.jpg">
+    <link rel="preload" as="image" alt="Imagen de fondo. Gente divirtiéndose en la feria." href="/media/bg-img3.jpg">
+    <link rel="preload" as="image" alt="Imágen de galería. Decoración de calle con paraguas de colores abiertos." href="/media/G01.jpg">
+    <link rel="preload" as="image" alt="Imágen de galería. Chica divirtiéndose en atracción de feria." href="/media/G02.jpg">
+    <link rel="preload" as="image" alt="Imágen de galería. Feria vista desde el aire de noche." href="/media/G03.jpg">
+    <link rel="preload" as="image" alt="Imágen de galería. Dulces típicos de la feria." href="/media/G04.jpg">
+    <link rel="preload" as="image" alt="Imágen de galería. Vista aérea de las casetas de noche." href="/media/G05.jpg">
     <!--------------------------------------------------------->
     
     <!-- AOS animation library -->
@@ -60,7 +60,7 @@
         <div id="contenedorModal">
             <h2 id="tituloModal">Bienvenido a la Feria de Acapulco</h2>
             <p id="textoModal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button id="btnModal" onclick="cerrarModalBienvenida()">Empezar!</button>
+            <button id="btnModal" onclick="cerrarModalBienvenida()" type="button">Empezar!</button>
         </div>
     </div>
     <!--------------------------------------------------------->
@@ -87,7 +87,7 @@
             <!---- Menú navegación ---->
             <nav>
                     <ul>
-                        <li class="elementoMenu tooltip" data-tooltip="boton"><a href="#header">Inicio</a></li>
+                        <li class="elementoMenu tooltip" data-tooltip="boton"><a href="#encabezado">Inicio</a></li>
                         <li class="elementoMenu"><a href="#filosofia">Filosofía</a></li>
                         <li class="elementoMenu"><a href="#galeria">Galería</a></li>
                         <li class="elementoMenu"><a href="#ofertas">Ofertas</a>
@@ -182,11 +182,11 @@
 
         <!----- Contenedor Galería ----->
         <div class="contenedorGaleria" data-aos="fade-up">
-            <img src="media/G01.jpg" alt="" class="imgGal" >
-            <img src="media/G02.jpg" alt="" class="imgGal" >
-            <img src="media/G03.jpg" alt="" class="imgGal" >
-            <img src="media/G05.jpg" alt="" class="imgGal" >
-            <img src="media/G04.jpg" alt="" class="imgGal" >
+            <img src="media/G01.jpg" alt="Imágen de galería. Decoración de calle con paraguas de colores abiertos." class="imgGal" >
+            <img src="media/G02.jpg" alt="Imágen de galería. Chica divirtiéndose en atracción de feria." class="imgGal" >
+            <img src="media/G03.jpg" alt="Imágen de galería. Feria vista desde el aire de noche." class="imgGal" >
+            <img src="media/G04.jpg" alt="Imágen de galería. Dulces típicos de la feria." class="imgGal" >
+            <img src="media/G05.jpg" alt="Imágen de galería. Vista aérea de las casetas de noche." class="imgGal" >
         </div>
         <!-------- Fin Contenedor Galería -------->
 
@@ -232,7 +232,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/traje1.jpg" alt="traje1"/>
+                        <img class="imagenOferta" src="media/ofertas/traje1.png" alt="Traje de Flamenca 1. Rojo."/>
                         <p class="nombreOferta">Traje 1</p>
                         <p class="precioOferta">100€</p>
                     </a>
@@ -240,7 +240,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/traje2.jpg" alt="traje2"/>
+                        <img class="imagenOferta" src="media/ofertas/traje2.png" alt="Traje de Flamenca 2. Azul claro."/>
                         <p class="nombreOferta">Traje 2</p>
                         <p class="precioOferta">200€</p>
                     </a>
@@ -248,7 +248,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/traje3.jpg" alt="traje1"/>
+                        <img class="imagenOferta" src="media/ofertas/traje3.png" alt="Traje de Flamenca 3. Rojo oscuro."/>
                         <p class="nombreOferta">Traje 3</p>
                         <p class="precioOferta">300€</p>
                     </a>
@@ -256,7 +256,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/traje4.jpg" alt="traje4"/>
+                        <img class="imagenOferta" src="media/ofertas/traje4.png" alt="Traje de Flamenca 4. Blanco."/>
                         <p class="nombreOferta">Traje 4</p>
                         <p class="precioOferta">400€</p>
                     </a>
@@ -264,7 +264,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/traje5.jpg" alt="traje5"/>
+                        <img class="imagenOferta" src="media/ofertas/traje5.png" alt="Traje de Flamenca 5. Verde oscuro."/>
                         <p class="nombreOferta">Traje 5</p>
                         <p class="precioOferta">500€</p>
                     </a>
@@ -272,7 +272,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/traje6.jpg" alt="traje6"/>
+                        <img class="imagenOferta" src="media/ofertas/traje6.png" alt="Traje de Flamenca 6. Rojo con Lunares Negros."/>
                         <p class="nombreOferta">Traje 6</p>
                         <p class="precioOferta">600€</p>
                     </a>
@@ -285,7 +285,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/hotel1.jpg" alt="hotel1"/>
+                        <img class="imagenOferta" src="media/ofertas/hotel1.jpg" alt="Habitacion de hotel 1"/>
                         <p class="nombreOferta">Hotel 1</p>
                         <p class="precioOferta">100€</p>
                     </a>
@@ -293,7 +293,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/hotel2.jpg" alt="hotel2"/>
+                        <img class="imagenOferta" src="media/ofertas/hotel2.jpg" alt="Habitacion de hotel 2"/>
                         <p class="nombreOferta">Hotel 2</p>
                         <p class="precioOferta">200€</p>
                     </a>
@@ -301,7 +301,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/hotel3.jpg" alt="hotel1"/>
+                        <img class="imagenOferta" src="media/ofertas/hotel3.jpg" alt="Habitacion de hotel 3"/>
                         <p class="nombreOferta">Hotel 3</p>
                         <p class="precioOferta">300€</p>
                     </a>
@@ -309,7 +309,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/hotel4.jpg" alt="hotel4"/>
+                        <img class="imagenOferta" src="media/ofertas/hotel4.jpg" alt="Habitacion de hotel 4"/>
                         <p class="nombreOferta">Hotel 4</p>
                         <p class="precioOferta">400€</p>
                     </a>
@@ -317,7 +317,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/hotel5.jpg" alt="hotel5"/>
+                        <img class="imagenOferta" src="media/ofertas/hotel5.jpg" alt="Habitacion de hotel 5"/>
                         <p class="nombreOferta">Hotel 5</p>
                         <p class="precioOferta">500€</p>
                     </a>
@@ -325,7 +325,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/hotel6.jpg" alt="hotel6"/>
+                        <img class="imagenOferta" src="media/ofertas/hotel6.jpg" alt="Habitacion de hotel 6"/>
                         <p class="nombreOferta">Hotel 6</p>
                         <p class="precioOferta">600€</p>
                     </a>
@@ -338,7 +338,7 @@
             <div class="contenedorPestana" id="pestanaTrabajos" >
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/trabajo1.jpg" alt="trabajo1"/>
+                        <img class="imagenOferta" src="media/ofertas/trabajo1.jpg" alt="Puesto de Trabajo 1. Hombre transportando barriles."/>
                         <p class="nombreOferta">Trabajo 1</p>
                         <p class="precioOferta">100€</p>
                     </a>
@@ -346,7 +346,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/trabajo2.jpg" alt="trabajo2"/>
+                        <img class="imagenOferta" src="media/ofertas/trabajo2.jpg" alt="Puesto de Trabajo 2. Imagen de caseta en construcción."/>
                         <p class="nombreOferta">Trabajo 2</p>
                         <p class="precioOferta">200€</p>
                     </a>
@@ -354,7 +354,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/trabajo3.jpg" alt="trabajo1"/>
+                        <img class="imagenOferta" src="media/ofertas/trabajo3.jpg" alt="Puesto de Trabajo 3. Hombre transportando sillas."/>
                         <p class="nombreOferta">Trabajo 3</p>
                         <p class="precioOferta">300€</p>
                     </a>
@@ -362,7 +362,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/trabajo4.jpg" alt="trabajo4"/>
+                        <img class="imagenOferta" src="media/ofertas/trabajo4.jpg" alt="Puesto de Trabajo 4. Mujer trabajando de camarera."/>
                         <p class="nombreOferta">Trabajo 4</p>
                         <p class="precioOferta">400€</p>
                     </a>
@@ -370,7 +370,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/trabajo5.jpg" alt="trabajo5"/>
+                        <img class="imagenOferta" src="media/ofertas/trabajo5.jpg" alt="Puesto de Trabajo 5. Hombres montando caseta."/>
                         <p class="nombreOferta">Trabajo 5</p>
                         <p class="precioOferta">500€</p>
                     </a>
@@ -378,7 +378,7 @@
 
                 <div class="oferta">
                     <a href="#">
-                        <img class="imagenOferta" src="media/ofertas/trabajo6.jpg" alt="trabajo6"/>
+                        <img class="imagenOferta" src="media/ofertas/trabajo6.jpg" alt="Puesto de Trabajo 6. Hombres montando caseta.(2)"/>
                         <p class="nombreOferta">Trabajo 6</p>
                         <p class="precioOferta">600€</p>
                     </a>
@@ -517,7 +517,7 @@
                 <p id="textoModalContacto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
                 <!------ Botón cerrar Modal contacto ------>
-                <button id="btnModalContacto" class="tooltip" data-tooltip="Click para volver atrás." onclick="cerrarModalContacto()">Enviar</button>
+                <button id="btnModalContacto" class="tooltip" data-tooltip="Click para volver atrás." onclick="cerrarModalContacto()" type="button">Enviar</button>
 
             </div>
             <!------ Fin Contenedor Modal contacto ------>
@@ -562,12 +562,12 @@
                 <!------ Contenido Pestaña Todos ------>
                 <div class="tab-container active" id="contAll">
                     <div class="image-grid" data-aos="fade-up">
-                        <img src="media/rrss1.png">
-                        <img src="media/rrss2.png">
-                        <img src="media/rrss3.png">
-                        <img src="media/servicio1.png">
-                        <img src="media/servicio2.png">
-                        <img src="media/servicio3.png">
+                        <img src="media/rrss1.png" alt="Logo de facebook. Imagen de redes sociales de la empresa.">
+                        <img src="media/rrss2.png" alt="Logo de instagram. Imagen de redes sociales de la empresa.">
+                        <img src="media/rrss3.png" alt="Logo de youtube. Imagen de redes sociales de la empresa.">
+                        <img src="media/servicio1.png" alt="Logo de hotel. Imagen de servicios de la empresa.">
+                        <img src="media/servicio2.png" alt="Logo de sastrería. Imagen de servicios de la empresa.">
+                        <img src="media/servicio3.png" alt="Logo de trabajo. Imagen de servicios de la empresa.">
                     </div>
                 </div>
                 <!------ Fin Contenido Pestaña Todos ------>
@@ -575,9 +575,9 @@
                 <!------ Contenido Pestaña Servicios ------>
                 <div class="tab-container" id="contServicios" data-aos="fade-up">
                     <div class="image-grid">
-                        <img src="media/servicio1.png">
-                        <img src="media/servicio2.png">
-                        <img src="media/servicio3.png">
+                        <img src="media/servicio1.png" alt="Logo de hotel. Imagen de servicios de la empresa.">
+                        <img src="media/servicio2.png" alt="Logo de sastrería. Imagen de servicios de la empresa.">
+                        <img src="media/servicio3.png" alt="Logo de trabajo. Imagen de servicios de la empresa.">
                     </div>
                 </div>
                 <!------ Fin Contenido Pestaña Servicios ------>
@@ -585,9 +585,9 @@
                 <!------ Contenido Pestaña Redes Sociales ------>
                 <div class="tab-container" id="contRedes" data-aos="fade-up">
                     <div class="image-grid">
-                        <img src="media/rrss1.png">
-                        <img src="media/rrss2.png">
-                        <img src="media/rrss3.png">
+                        <img src="media/rrss1.png" alt="Logo de facebook. Imagen de redes sociales de la empresa.">
+                        <img src="media/rrss2.png" alt="Logo de instagram. Imagen de redes sociales de la empresa.">
+                        <img src="media/rrss3.png" alt="Logo de youtube. Imagen de redes sociales de la empresa.">
                     </div>
                 </div>
                 <!------ Fin Contenido Pestaña Redes Sociales ------>
@@ -622,17 +622,17 @@
 
                 <!---- FB ---->
                 <a href="#header">
-                    <img src="media/rrss1.png" alt="facebook" class="redesFooter">
+                    <img src="media/rrss1.png" alt="Logo de facebook. Imagen de redes sociales de la empresa." class="redesFooter">
                 </a>
 
                 <!---- Instagram ---->
                 <a href="#header">
-                    <img src="media/rrss2.png" alt="instagram" class="redesFooter">
+                    <img src="media/rrss2.png" alt="Logo de instagram. Imagen de redes sociales de la empresa." class="redesFooter">
                 </a>
 
                 <!---- Twitter ---->
                 <a href="#header">
-                    <img src="media/rrss3.png" alt="twitter" class="redesFooter">
+                    <img src="media/rrss3.png" alt="Logo de youtube. Imagen de redes sociales de la empresa." class="redesFooter">
                 </a>
 
             </div>
